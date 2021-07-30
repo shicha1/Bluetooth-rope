@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0EEEE"
+
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_bt"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/bt"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="180dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_bt_client"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+
+
+        android:text="@string/bt_client"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bt" />
+
+    <Button
+        android:id="@+id/btn_bt_server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+
+        android:text="@string/bt_server"
+        app:layout_constraintTop_toBottomOf="@+id/btn_bt_client" />
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:visibility="gone"
+        android:layout_marginTop="100dp"
+        android:background="#000"
+        app:layout_constraintTop_toBottomOf="@+id/btn_bt_server" />
+
+    <TextView
+        android:id="@+id/tv_ble"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/ble"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+    <Button
+        android:id="@+id/btn_ble_client"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
+        android:layout_height="wrap_content"
+        android:onClick="bleClient"
+        android:background="@drawable/search_shape"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:text="@string/ble_client"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ble" />
+
+    <Button
+        android:id="@+id/btn_ble_server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+
+        android:text="@string/ble_server"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ble_client" />
+</android.support.constraint.ConstraintLayout>

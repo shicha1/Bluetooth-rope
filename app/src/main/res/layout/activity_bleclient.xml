@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="2dp"
+    android:orientation="vertical"
+    android:background="#E0EEEE"
+    tools:context=".ble.BleClientActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_scan"
+            android:layout_width="180dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/search_shape"
+            android:layout_height="30dp"
+            android:paddingRight="22dp"
+            android:onClick="reScan"
+            android:textSize="13dp"
+            android:textColor="#ff6600"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+
+            android:text="@string/reScan" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_ble"
+            android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/stroke"
+            android:padding="4dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            >
+
+          <LinearLayout
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_weight="4"
+              android:orientation="vertical">
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                 android:layout_weight="1"
+
+                 android:layout_margin="5dp"
+                 android:orientation="horizontal">
+
+                 <TextView
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="1.2"
+                     android:text="准考证号"
+                     android:gravity="center"
+                     />
+                 <EditText
+
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="4"
+                     android:id="@+id/edt_id"
+                     android:hint="@string/max_byte"
+                     android:inputType="none"
+                     android:layout_marginLeft="5dp"
+                     android:layout_marginRight="10dp"
+                     android:paddingLeft="10dp"
+                     android:textColor="#000000"
+                     android:background="@drawable/edt"
+                     android:maxLength="20"
+                     />
+
+             </LinearLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="1.2"
+
+                  android:layout_margin="5dp"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_weight="1.2"
+                      android:gravity="center"
+                      android:text="姓名" />
+                  <EditText
+
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_weight="4"
+                      android:id="@+id/edt_name"
+                      android:hint="@string/max_byte"
+                      android:inputType="none"
+                      android:layout_marginLeft="5dp"
+                      android:layout_marginRight="10dp"
+                      android:paddingLeft="10dp"
+                      android:textColor="#000000"
+                      android:background="@drawable/edt"
+                      android:maxLength="20"
+                      />
+
+              </LinearLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="1.2"
+
+                  android:layout_margin="5dp"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_weight="1.2"
+                      android:gravity="center"
+                      android:text="性别" />
+                  <EditText
+
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_weight="4"
+                      android:hint="m或者f"
+                      android:inputType="none"
+                      android:id="@+id/edt_gender"
+                      android:layout_marginLeft="5dp"
+                      android:layout_marginRight="10dp"
+                      android:paddingLeft="10dp"
+                      android:textColor="#000000"
+                      android:background="@drawable/edt"
+                      android:maxLength="1"
+                      />
+
+              </LinearLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="1.2"
+
+                  android:layout_margin="5dp"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_weight="1.2"
+                      android:gravity="center"
+                      android:text="手柄地址" />
+
+                  <EditText
+
+                      android:id="@+id/edt_handler_id"
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_marginLeft="5dp"
+                      android:layout_marginRight="10dp"
+                      android:layout_weight="4"
+                      android:background="@drawable/edt"
+                      android:inputType="none"
+                      android:maxLength="19"
+                      android:paddingLeft="10dp"
+                      android:text=""
+                      android:textColor="#000000" />
+
+              </LinearLayout>
+
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="1.2"
+
+                  android:layout_margin="5dp"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_weight="1.2"
+                      android:gravity="center"
+                      android:text="LED地址" />
+                  <EditText
+
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_weight="4"
+                      android:text=""
+                      android:id="@+id/edt_led_id"
+                      android:inputType="none"
+                      android:layout_marginLeft="5dp"
+                      android:layout_marginRight="10dp"
+                      android:paddingLeft="10dp"
+                      android:textColor="#000000"
+                      android:background="@drawable/edt"
+                      android:maxLength="15"
+                      />
+
+              </LinearLayout>
+
+
+
+
+
+
+
+
+          </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+
+                    android:layout_width="80dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/search_shape"
+                    android:layout_marginHorizontal="5dp"
+                    android:textColor="#ffffff"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:onClick="importInfo"
+                    android:text="导入"
+                    />
+                <Button
+
+                    android:layout_width="80dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/search_shape"
+                    android:layout_marginHorizontal="5dp"
+                    android:textColor="#ffffff"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:onClick="sendInfo"
+                    android:text="发送"
+                    />
+
+                <Button
+
+                    android:layout_width="80dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/search_shape"
+                    android:layout_marginHorizontal="5dp"
+                    android:textColor="#ffffff"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:onClick="clearInfo"
+                    android:text="清除"
+                    />
+                <Button
+
+                    android:layout_width="80dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/search_shape"
+                    android:layout_marginHorizontal="5dp"
+                    android:textColor="#ffffff"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:onClick="readGrade"
+                    android:text="读取"
+                    />
+                <Button
+
+                    android:layout_width="80dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/search_shape"
+                    android:layout_marginHorizontal="5dp"
+                    android:textColor="#ffffff"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:onClick="upLoad"
+                    android:text="上传"
+
+                    />
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tv_name"
+                        android:text="考生姓名"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tv_id"
+                        android:text="准考证号"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tv_gender"
+                        android:text="性别"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tv_handlerId"
+                        android:text="手柄地址"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tv_ledId"
+                        android:text="led地址"
+                        android:gravity="center"
+                        android:visibility="visible"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tv_grade"
+                        android:text="成绩"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_ble_2"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/stroke"
+                    android:padding="4dp"
+                    />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/stroke"
+
+                    android:layout_marginHorizontal="5dp"
+                    android:scrollbars="none"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_tips"
+                        android:layout_width="match_parent"
+                        android:padding="5dp"
+                        android:textSize="18dp"
+                        android:textColor="#000000"
+                        android:layout_height="wrap_content" />
+                </ScrollView>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
